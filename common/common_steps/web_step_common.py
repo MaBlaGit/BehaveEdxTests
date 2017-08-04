@@ -2,7 +2,6 @@ from behave import given, when, then
 from common.common_functions import webcommon
 from common.common_configs.url_config import URLCONFIG
 from common.common_configs.locators_config import LOCATORS
-import time
 
 
 @given('I open "{url}"')
@@ -29,26 +28,53 @@ def locate_and_send_keys(context, element, course):
     locator_info = LOCATORS.get(element)
     locator_type = locator_info['by']
     locator_text = locator_info['locator']
+    # find element
     locate_element = webcommon.find_element(context, locator_type, locator_text)
     locate_element.send_keys(course)
 
 
 @when('I click on the "{element}"')
-def click_on_search_button(context, element):
+def click_on_search(context, element):
     # locators
     locator_info = LOCATORS.get(element)
     locator_type = locator_info['by']
     locator_text = locator_info['locator']
+    # find element
     locate_element = webcommon.find_element(context, locator_type, locator_text)
     locate_element.click()
     locate_element.click()
 
 
+@when('I click on the "{button}" button')
+def click_on_button(context, button):
+    # locators
+    locator_info = LOCATORS.get(button)
+    locator_type = locator_info['by']
+    locator_text = locator_info['locator']
+    context.driver.execute_script("window.scrollBy(0, 1000)")
+    # find element
+    find_button = webcommon.find_element(context, locator_type, locator_text)
+    find_button.click()
+
+
+@when('I select "{avatar}"')
+def click_on_avatar(context, avatar):
+    # locators
+    locator_info = LOCATORS.get(avatar)
+    locator_type = locator_info['by']
+    locator_text = locator_info['locator']
+    # find element
+    locate_element = webcommon.find_element(context, locator_type, locator_text)
+    locate_element.click()
+
+
 @then('the "{element}" is loaded with searched {course} courses')
 def results_page(context, element, course):
+    # locators
     locator_info = LOCATORS.get(element)
     locator_type = locator_info['by']
     locator_text = locator_info['locator']
+    # find element
     locate_element = webcommon.find_element(context, locator_type, locator_text)
     webcommon.assert_element_is_displayed(locate_element)
 
