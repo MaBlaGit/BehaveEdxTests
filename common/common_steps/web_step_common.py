@@ -11,6 +11,7 @@ def open_the_webpage(context, url):
 
 
 @given('the "{element}" is visible')
+@when('The "{element}" is visible')
 @then('the "{element}" is visible')
 def search_if_element_is_visible(context, element):
     # locators
@@ -22,7 +23,7 @@ def search_if_element_is_visible(context, element):
     webcommon.assert_element_is_displayed(web_element)
 
 
-@when('I in the "{element}" enter {course}')
+@when('I in the "{element}" enter "{course}"')
 def locate_and_send_keys(context, element, course):
     # locators
     locator_info = LOCATORS.get(element)
@@ -78,3 +79,13 @@ def results_page(context, element, course):
     locate_element = webcommon.find_element(context, locator_type, locator_text)
     webcommon.assert_element_is_displayed(locate_element)
 
+
+@when('I click on the "{element}" from the drop down list')
+def click_on_the_first_element_from_drop_down(context, element):
+    # locators
+    locator_info = LOCATORS.get(element)
+    locator_type = locator_info['by']
+    locator_text = locator_info['locator']
+    # find element
+    first_element_from_list = webcommon.find_element(context, locator_type, locator_text)
+    first_element_from_list.click()

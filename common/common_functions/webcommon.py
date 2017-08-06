@@ -1,4 +1,7 @@
 
+
+"""Common steps used in tests."""
+
 def find_element(context, by, locator):
 
     by_list = ["id", "name", "xpath", "css selector",

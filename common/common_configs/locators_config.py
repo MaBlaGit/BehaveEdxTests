@@ -19,7 +19,11 @@ LOCATORS = {
     'course page avatar': {'by': 'xpath',
                            'locator': '(//div[@class="discovery-card-inner-wrapper"])[1]'},
     'enroll button': {'by': 'xpath',
-                      'locator': '(//a[@class="btn btn-cta txt-center js-enroll-btn "])[1]'}
+                      'locator': '(//a[@class="btn btn-cta txt-center js-enroll-btn "])[1]'},
+
+    'drop down menu': {'by': 'xpath',
+                       'locator': '//h3[@class="league-name"]'},
+
+    'first result': {'by': 'xpath',
+                     'locator': '//div[@class="tt-dataset-course"]'}
     }
-
-
