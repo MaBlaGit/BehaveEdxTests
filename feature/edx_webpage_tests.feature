@@ -1,6 +1,6 @@
 Feature: Testing basic functionalities edx.org webpage
 
-    @scenario_1
+    @test_1
     Scenario: Check if webpage www.edx.org load correctly
 
       	Given I open "www.edx.org"
@@ -9,7 +9,7 @@ Feature: Testing basic functionalities edx.org webpage
       	And the "register button" is visible
         And the "sign in button" is visible
 
-    @scenario_2
+    @test_2
     Scenario Outline: Check if user can search the <course> course
 
         Given I open "www.edx.org"
@@ -25,7 +25,7 @@ Feature: Testing basic functionalities edx.org webpage
             | Haskell |
             |  Ruby   |
 
-    @scenario_3
+    @test_3
     Scenario: Check if selected course page is loaded correctly
 
 	    Given I open "www.edx.org"
@@ -34,13 +34,13 @@ Feature: Testing basic functionalities edx.org webpage
         And I select "course page avatar"
         Then the "enroll button" is visible
 
-    @scenario_4
+    @test_4
     Scenario: Check if most related results of "search field" drop down menu are clickable and redirects
               to course web page.
 
 	    Given I open "www.edx.org"
 	    And the "search field" is visible
-	    When I in the "search field" enter "Python"
+	    When I in the "search field" enter Python
         And The "drop down menu" is visible
 	    And I click on the "first result" from the drop down list
 	    Then the "enroll button" is visible

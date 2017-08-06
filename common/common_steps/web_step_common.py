@@ -23,7 +23,7 @@ def search_if_element_is_visible(context, element):
     webcommon.assert_element_is_displayed(web_element)
 
 
-@when('I in the "{element}" enter "{course}"')
+@when('I in the "{element}" enter {course}')
 def locate_and_send_keys(context, element, course):
     # locators
     locator_info = LOCATORS.get(element)
