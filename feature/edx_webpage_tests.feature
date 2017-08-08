@@ -42,5 +42,5 @@ Feature: Testing basic functionalities edx.org webpage
 	    And the "search field" is visible
 	    When I in the "search field" enter Python
         And The "drop down menu" is visible
-	    And I click on the "first result" from the drop down list
+	    And I click on the "first element" from the drop down list
 	    Then the "enroll button" is visible

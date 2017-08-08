@@ -2,6 +2,8 @@ from behave import given, when, then
 from common.common_functions import webcommon
 from common.common_configs.url_config import URLCONFIG
 from common.common_configs.locators_config import LOCATORS
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
 
 @given('I open "{url}"')
@@ -87,5 +89,8 @@ def click_on_the_first_element_from_drop_down(context, element):
     locator_type = locator_info['by']
     locator_text = locator_info['locator']
     # find element
-    first_element_from_list = webcommon.find_element(context, locator_type, locator_text)
-    first_element_from_list.click()
+    webcommon.find_element(context, locator_type, locator_text)
+    action = ActionChains(context.driver)
+    action.key_down(Keys.ARROW_DOWN)
+    action.key_down(Keys.ENTER)
+    action.perform()

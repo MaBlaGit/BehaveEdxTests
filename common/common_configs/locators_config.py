@@ -24,6 +24,7 @@ LOCATORS = {
     'drop down menu': {'by': 'xpath',
                        'locator': '//h3[@class="league-name"]'},
 
-    'first result': {'by': 'xpath',
-                     'locator': '//div[@class="tt-dataset-course"]'}
+    'first element': {'by': 'xpath',
+                      'locator': '(//input[@class="js-search-bar edit-search-query form-text tt-input"])[2]'},
+
     }
