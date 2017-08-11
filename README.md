@@ -13,7 +13,7 @@ This repo shows usage the concept of Behavior-driven Development (BDD) with Beha
 
 ### To Run Tests - Linux Ubuntu way:
 
-1.Clone/Download project: https://github.com/MaBlaGit/SeleniumPageObjectPatternExample
+1.Clone/Download project: https://github.com/MaBlaGit/BehaveEdxTests
 
 2.Install __virtualenvwrapper__
 ```
