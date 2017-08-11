@@ -3,7 +3,7 @@
 ## Description:
 This repo shows usage the concept of Behavior-driven Development (BDD) with Behave, Selenium WebDriver and Python.
 
-### Tests was implementing and running on:
+### Tests were implemented and run on:
 
 * System: Linux Ubuntu 16.04 LTS
 * Browsers: Firefox 54, Chrome 60.0.3112.90
@@ -15,7 +15,7 @@ This repo shows usage the concept of Behavior-driven Development (BDD) with Beha
 
 1.Clone/Download project: https://github.com/MaBlaGit/SeleniumPageObjectPatternExample
 
-2.Install __virtialenvwrapper__
+2.Install __virtualenvwrapper__
 ```
  $ pip install virtualenvwrapper
 ```
