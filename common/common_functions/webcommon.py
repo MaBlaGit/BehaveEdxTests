@@ -1,5 +1,5 @@
-
-
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
 """Common steps used in tests."""
 
 
@@ -13,7 +13,8 @@ def find_element(context, by, locator):
         raise Exception("Locator not supported!!!",
                         "Supported locators: {0}".format(by_list))
     try:
-        element = context.driver.find_element(by, locator)
+        wait = WebDriverWait(context.driver, 10)
+        element = wait.until(ec.presence_of_element_located((by, locator)))
         return element
     except:
         raise Exception("Couldn't find element!!!!")

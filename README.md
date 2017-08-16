@@ -6,7 +6,7 @@ This repo shows usage the concept of Behavior-driven Development (BDD) with Beha
 ### Tests were implemented and run on:
 
 * System: Linux Ubuntu 16.04 LTS
-* Browsers: Firefox 54, Chrome 60.0.3112.90
+* Browsers: Firefox 55.0.1 (64-bit), Chrome 60.0.3112.101 (64-bit)
 * Selenium WebDriver: 3.4.3
 * Behave: 1.2.5
 * Python: 3.5.2

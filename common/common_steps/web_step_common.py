@@ -42,10 +42,12 @@ def click_on_search(context, element):
     locator_info = LOCATORS.get(element)
     locator_type = locator_info['by']
     locator_text = locator_info['locator']
-    # find element
     locate_element = webcommon.find_element(context, locator_type, locator_text)
-    locate_element.click()
-    locate_element.click()
+    if context.driver.name == "firefox":
+        locate_element.click()
+    elif context.driver.name == "chrome":
+        locate_element.click()
+        locate_element.click()
 
 
 @when('I click on the "{button}" button')
@@ -82,7 +84,7 @@ def results_page(context, element, course):
     webcommon.assert_element_is_displayed(locate_element)
 
 
-@when('I click on the "{element}" from the drop down list')
+@when('I choose the "{element}" from the drop down list')
 def click_on_the_first_element_from_drop_down(context, element):
     # locators
     locator_info = LOCATORS.get(element)
